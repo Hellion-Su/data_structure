@@ -1,0 +1,43 @@
+def BinaryTree(root):
+    
+    return [[root],[],[]]
+
+def InsertLeft(root, value):
+    
+    root.insert(1,[value,root.pop(1),[]])
+    
+    return root
+def InsertRight(root, value):
+    
+    root.insert(2,[value,[],root.pop(2)])
+    
+    return root
+
+def SetLeft(root, value):
+    
+    root[1] = value
+    
+def SetRight(root, value):
+    
+    root[2] = value
+    
+def GetLeftChild(root):
+    
+    return root[1]
+
+def GetRightChild(root):
+    
+    return root[2]
+
+root = []
+root = BinaryTree(1)
+
+
+
+root = InsertRight(root, 3)
+
+root = InsertLeft(root, [[2],[3],[4]])
+
+root = InsertLeft(root, 2)
+
+l = GetLeftChild(root[1])
