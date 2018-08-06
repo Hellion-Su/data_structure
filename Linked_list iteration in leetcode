@@ -1,0 +1,24 @@
+class ListNode(object):
+    def __init__ (self, val):
+        self.val = val:
+        self.next = None
+        
+    def ListToLinkedList(input):
+        dummy = ListNode(0)
+        a = dummy
+        for i in input:
+            a.next = ListNode(input)
+            a = a.next
+        return dummy.next #head of new linkedlist
+        
+    def LinkedListToList(node):
+        list1 = []
+        if not node:
+            return list1
+        while node:
+            list1.append(node.val)
+            node = node.next
+        return list1    
+        
+            
+         
