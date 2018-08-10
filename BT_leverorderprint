@@ -1,0 +1,35 @@
+class treenode(object):
+    def __init__(self, val ,left, right):
+        self.val = val
+        self.left = left
+        self.right = right
+
+import collections
+        
+def leverorderprint(tree):
+    
+    if not tree:
+        return
+    else:
+        node = collections.deque([tree])
+        
+    currentcount = 1
+    nextcount = 0
+    
+    while len(node) != 0:
+        
+        currentnode = node.popleft()
+        currentcount -= 1
+        print currentnode.val,
+        
+        if currentnode.left:
+            node.append(currentnode.left)
+            nextcount += 1
+            
+        if currentnode.right:
+            node.append(currentnode.right)
+            nextcount -= 1
+            
+        if currentcount == 0:
+            print '\n'
+            nextcount, currentcount = currentcount, nextcount
