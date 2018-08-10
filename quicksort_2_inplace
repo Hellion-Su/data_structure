@@ -1,0 +1,27 @@
+def quicksort(arr):
+    
+    return _quicksort(arr,0,len(arr)-1)
+
+def _quicksort(arr, start, end):
+    
+    if end > start:
+        
+        splitpoint = partition(arr, start, end)
+        
+        _quicksort(arr,start,splitpoint-1)
+        _quicksort(arr,splitpoint+1,end)
+    
+    return arr
+
+def partition(arr,start,end):
+    
+    if end>start:
+    
+        pivot = start
+    
+        for i in range(start+1,end):
+            if arr[i] <= arr[start]:
+                pivot += 1
+                arr[pivot], arr[i] = arr[i], arr[pivot]
+        arr[start], arr[pivot] = arr[pivot], arr[start]
+    return pivot
