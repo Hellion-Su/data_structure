@@ -38,7 +38,7 @@ class TreeNode:
         self.rightchild = rc
         if self.hasleftchild():
             self.leftchild.parent = self
-        if self hasrightchild():
+        if self.hasrightchild():
             self.rightchild.parent = self
             
 class BinarySearchTree(object):
@@ -69,11 +69,11 @@ class BinarySearchTree(object):
                 self._put(self,key,value,currentNode.leftchild)
             else:
                 currentNode.leftchild = TreeNode(key,value,parent = currentNode)
-        else key > currentNode.hey:
+        elif key > currentNode.hey:
             if currentNode.hasrightchild:
                 self._put(self, key, value, currentNode.rightchild)
             else:
-                currentNode.rightchild = TreeNode (key,value,parent = currentNode  v)
+                currentNode.rightchild = TreeNode(key,value,parent = currentNode)
             
     def __setitem__(self, key, value):
         self.put(key, value)
@@ -106,12 +106,12 @@ class BinarySearchTree(object):
     def __contains__(self, key):
         if self._get(key,self.root):
             return True
-        else
+        else:
             return False
         
     def delete(self, key):
-        if self.size > 1
-        nodetoremove = self._get(key,self.root)
+        if self.size > 1:
+            nodetoremove = self._get(key,self.root)
             if nodetoremove:
                 self.remove(nodetoremove)
                 self.size = self.size - 1
@@ -214,3 +214,6 @@ class BinarySearchTree(object):
                     self.parent.rightChild = self.rightChild
                 self.rightChild.parent = self.parent
             
+        
+                                                
+                                                
