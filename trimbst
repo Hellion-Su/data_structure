@@ -1,0 +1,13 @@
+def trimbst(tree,Min,Max):
+    
+    if not tree:
+        return
+    tree.left = trimbst(tree.left,Min,Max)
+    tree.right = trimbst(tree.right,Min,Max)
+    
+    if Min <= tree.val <= Max:
+        return tree
+    if tree.val < Min:
+        return tree.right
+    if tree.val > Max:
+        return tree.left
